@@ -1,12 +1,15 @@
 {
   "categories": [
     {
+      "id": "1",
       "name": "Math Toys",
       "subCategories": [
         {
+          "id": "1",
           "name": "Math Puzzles",
           "toys": [
             {
+              "id": "1",
               "picture": "https://i.ibb.co/K7MMjjs/my-img13.jpg",
               "name": "Number Cruncher",
               "description": "A challenging math puzzle that tests your calculation skills.",
@@ -15,6 +18,7 @@
               "likes": 56
             },
             {
+              "id": "2",
               "picture": "https://i.ibb.co/hCZ8nS0/my-img12.png",
               "name": "Arithmetic Whiz",
               "description": "Become an arithmetic whiz with this interactive toy that enhances your math abilities.",
@@ -23,6 +27,7 @@
               "likes": 32
             },
             {
+              "id": "3",
               "picture": "https://i.ibb.co/bNcMJrQ/my-img07-1.jpg",
               "name": "Mechatron",
               "description": "Build and program your own robotic math companion with Mechatron.",
@@ -35,12 +40,15 @@
       ]
     },
     {
+      "id": "2",
       "name": "Language Toys",
       "subCategories": [
         {
+          "id": "1",
           "name": "Phonics Fun",
           "toys": [
             {
+              "id": "1",
               "picture": "https://i.ibb.co/hCZ8nS0/my-img12.png",
               "name": "Word Wizard",
               "description": "Unlock the world of words and improve your vocabulary with the Word Wizard toy.",
@@ -49,6 +57,7 @@
               "likes": 45
             },
             {
+              "id": "2",
               "picture": "https://i.ibb.co/ncF91MR/my-img26.jpg",
               "name": "Letter Explorer",
               "description": "Embark on a letter exploration adventure and learn the alphabet in a fun way.",
@@ -57,6 +66,7 @@
               "likes": 62
             },
             {
+              "id": "3",
               "picture": "https://i.ibb.co/dGmQLgn/my-img30.jpg",
               "name": "Story Weaver",
               "description": "Create your own imaginative stories with the Story Weaver toy and let your creativity soar.",
@@ -69,12 +79,15 @@
       ]
     },
     {
+      "id": "3",
       "name": "Engineering Toys",
       "subCategories": [
         {
+          "id": "1",
           "name": "Building Blocks",
           "toys": [
             {
+              "id": "1",
               "picture": "https://i.ibb.co/WWvFRjY/my-img23.jpg",
               "name": "Constructo",
               "description": "Build incredible structures and unleash your architectural skills with the Constructo building blocks.",
@@ -83,6 +96,7 @@
               "likes": 52
             },
             {
+              "id": "2",
               "picture": "https://i.ibb.co/M8YyT8h/my-img21.jpg",
               "name": "Design Master",
               "description": "Become a design master and create amazing engineering marvels with this toy.",
@@ -91,6 +105,7 @@
               "likes": 38
             },
             {
+              "id": "3",
               "picture": "https://i.ibb.co/dGmQLgn/my-img30.jpg",
               "name": "Story Weaver",
               "description": "Create your own imaginative stories with the Story Weaver toy and let your creativity soar.",

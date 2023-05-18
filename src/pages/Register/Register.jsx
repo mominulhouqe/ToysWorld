@@ -50,8 +50,12 @@ const Register = () => {
                 Swal.fire('Error!', errorMessage, 'error');
               });
     }
+   
 
 
+
+
+    
     return (
         <div >
             <div className="flex justify-center items-center my-20 min-h-screen bg-gray-100">
