@@ -7,31 +7,29 @@ import Register from "../pages/Register/Register";
 import ToysDetails from "../pages/ToysDetails/ToysDetails";
 
 const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Main />,
-    errorElement: <ErrorPage />,
-    children: [
-      {
+    {
         path: "/",
-        element: <Home />,
-      },
-      {
-        path: "login",
-        element: <Login />,
-      },
-      {
-        path: "register",
-        element: <Register />,
-      },
-      {
-        path: "toys/:id",
-        element: <ToysDetails />,
-        loader: ({ params }) =>fetch(`shops.json/toys/${params.id}`) // Update the API endpoint accordingly
-         
-      },
-    ],
-  },
+        element: <Main />,
+        errorElement: <ErrorPage />,
+        children: [
+            {
+                path: "/",
+                element: <Home />,
+            },
+            {
+                path: "login",
+                element: <Login />,
+            },
+            {
+                path: "register",
+                element: <Register />,
+            },
+            {
+                path: "toys/:id",
+                element: <ToysDetails />
+            },
+        ],
+    },
 ]);
 
 export default router;
