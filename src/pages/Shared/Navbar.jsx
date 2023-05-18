@@ -40,9 +40,9 @@ const Navbar = () => {
                     </ul>
                 </div>
                 
-                <div className="w-36 normal-case text-xl"> 
+                <a className="w-36 normal-case text-xl"> 
                 <img src="https://images-platform.99static.com//qJ3u8FABhDvDacTrJfkMzHvVFCM=/378x266:1622x1510/fit-in/500x500/99designs-contests-attachments/138/138432/attachment_138432570" alt=""  className=' '/>
-                </div>
+                </a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal font-semibold px-1">

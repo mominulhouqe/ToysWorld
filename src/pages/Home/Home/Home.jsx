@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from '../../Shared/Navbar';
 import Banner from '../Banner/Banner';
+import Footer from '../../Shared/Footer';
 
 const Home = () => {
     return (
@@ -8,6 +9,7 @@ const Home = () => {
             <Navbar></Navbar>
             
             <Banner></Banner>
+            <Footer></Footer>
 
         </div>
     );
