@@ -16,7 +16,7 @@ const ToysCategory = () => {
 
   return (
     <div className="p-4 font-serif mb-4  mx-auto bg-slate-100">
-      <h2 className="text-5xl my-14 font-extrabold mb-4 text-center">Shop by Category</h2>
+      <h2 className="text-5xl my-14 font-extrabold mb-4 text-center  text-orange-500'">Shop by Category</h2>
       <hr className='text-warning' />
       <Tabs className="text-center">
         <TabList className="flex mb-14 align-middle justify-center text-1xl my-16 ">

@@ -2,29 +2,41 @@
   {
     "id": 1,
     "name": "The Whimsical Woodland Friend",
-    "description": "Step into an enchanted forest where adorable woodland creatures come to life. This delightful collection of plush toys features cuddly foxes, wise owls, and playful squirrels, each one ready to be your loyal companion on magical adventures",
-    "img": "https://i.ibb.co/dGmQLgn/my-img30.jpg"
+    "description": "Step into an enchanted forest where adorable woodland creatures come to life. This delightful collection of plush toys features cuddly foxes, wise owls, and playful squirrels, each one ready to be your loyal companion on magical adventures.",
+    "img": "https://i.ibb.co/dGmQLgn/my-img30.jpg",
+    "rating": 4.5,
+    "like": 15
   },
- 
   {
     "id": 2,
     "name": "The Dazzling Princess Castle",
     "description": "Enter a world of fairytales with this exquisite princess castle toy. Its shimmering towers and delicate details will transport you to a realm of royalty and elegance. Unleash your inner prince or princess and create enchanting stories in this magical castle.",
-    "img": "https://i.ibb.co/s3YLGsL/my-img14.jpg"
+    "img": "https://i.ibb.co/s3YLGsL/my-img14.jpg",
+    "rating": 4.2,
+    "like": 10
   },
- 
   {
     "id": 3,
     "name": "The Adventure Seeker's Kit",
-    "description": "Calling all adventurers! This kit is designed for the brave souls who seek thrilling quests and daring escapades. With a compass, a treasure map, and a trusty explorer's hat, you'll be ready to conquer uncharted territories and unlock hidden treasures",
-    "img": "https://i.ibb.co/ncF91MR/my-img26.jpg"
+    "description": "Calling all adventurers! This kit is designed for the brave souls who seek thrilling quests and daring escapades. With a compass, a treasure map, and a trusty explorer's hat, you'll be ready to conquer uncharted territories and unlock hidden treasures.",
+    "img": "https://i.ibb.co/ncF91MR/my-img26.jpg",
+    "rating": 4.7,
+    "like": 8
   },
- 
   {
     "id": 4,
     "name": "The Whimsical Woodland Friend",
-    "description": "Step into an enchanted forest where adorable woodland creatures come to life. This delightful collection of plush toys features cuddly foxes, wise owls, and playful squirrels, each one ready to be your loyal companion on magical adventures",
-    "img": "https://i.ibb.co/dGmQLgn/my-img30.jpg"
+    "description": "Step into an enchanted forest where adorable woodland creatures come to life. This delightful collection of plush toys features cuddly foxes, wise owls, and playful squirrels, each one ready to be your loyal companion on magical adventures.",
+    "img": "https://i.ibb.co/dGmQLgn/my-img30.jpg",
+    "rating": 4.0,
+    "like": 5
+  },
+  {
+    "id": 5,
+    "name": "The Dazzling Princess Castle",
+    "description": "Step into an enchanted forest where adorable woodland creatures come to life. This delightful collection of plush toys features cuddly foxes, wise owls, and playful squirrels, each one ready to be your loyal companion on magical adventures.",
+    "img": "https://i.ibb.co/2NqPPR5/my-img03-2.jpg",
+    "rating": 4.9,
+    "like": 12
   }
- 
 ]
