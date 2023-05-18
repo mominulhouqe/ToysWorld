@@ -32,7 +32,7 @@ const ToysCategory = () => {
             {category.subCategories.map((subCategory, subIndex) => (
               <div key={subIndex}>
                 <h3 className="text-lg font-semibold mt-4 mb-2">{subCategory.name}</h3>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-3 gap-4">
                   {subCategory.toys.map((toy, toyIndex) => (
                     <div key={toyIndex} className="bg-white p-4 rounded shadow">
                       <img src={toy.picture} alt={toy.name} className="w-full h-40 object-cover mb-2" />
