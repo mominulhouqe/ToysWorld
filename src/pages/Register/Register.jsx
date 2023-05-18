@@ -1,12 +1,61 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { FaGoogle } from "react-icons/fa";
-const Login = () => {
+import { AuthContext } from '../../AuthProvider/AuthProvider';
+
+const Register = () => {
+
+
+const {createUser} = useContext(AuthContext);
+ 
+    const handleRegister = (event) => {
+        event.preventDefault();
+        const form = event.target;
+        const name = form.name.value;
+        const email = form.email.value;
+        const password = form.password.value;
+        const photoURL = form.photoURL.value;
+        console.log(name, email, password,photoURL)
+
+
+        createUser(email, password,photoURL)
+            .then(result => {
+                const user = result.user;
+                console.log('created user', user)
+            })
+            .catch(error => console.log(error))
+    }
+
+
     return (
-        <div>
-            <div className="flex justify-center items-center min-h-screen bg-gray-100">
-                <div className="w-full max-w-sm bg-white shadow-md rounded-2xl px-16 py-16">
+        <div >
+            <div className="flex justify-center items-center my-20 min-h-screen bg-gray-100">
+                <div className="w-full max-w-sm bg-white shadow-md rounded-2xl px-16 py-10">
                     <h2 className="text-4xl font-bold mb-6  text-center ">Login</h2>
-                    <form>
+                    <form onSubmit={handleRegister}>
+                        <div className="mb-4">
+                            <label htmlFor="name" className="block text-gray-700 font-semibold mb-2">
+                                Name
+                            </label>
+                            <input
+                                type="name"
+                                id="name"
+                                name='name'
+                                className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:border-blue-500"
+                                placeholder="Enter your name "
+                            />
+                        </div>
+                        <div className="mb-4">
+                            <label htmlFor="name" className="block text-gray-700 font-semibold mb-2">
+                                Photo URL
+                            </label>
+                            <input
+                                type="photoURL"
+                                id="photoURL"
+                                name='photoURL'
+                                className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:border-blue-500"
+                                placeholder="Enter your photoURL "
+                            />
+                        </div>
                         <div className="mb-4">
                             <label htmlFor="email" className="block text-gray-700 font-semibold mb-2">
                                 Email Address
@@ -42,19 +91,18 @@ const Login = () => {
 
                             <button
                                 type="button"
-                               
+
                                 className="flex gap-2 items-center btn  hover:bg-red-600  btn-outline  font-semibold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                             >
-                            <FaGoogle></FaGoogle>
+                                <FaGoogle></FaGoogle>
                                 Sign In with Google
                             </button>
                         </div>
                     </form>
                 </div>
             </div>
-
         </div>
     );
 };
 
-export default Login;
+export default Register;
