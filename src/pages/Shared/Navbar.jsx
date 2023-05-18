@@ -11,6 +11,8 @@ const Navbar = () => {
             <li className="font-semibold"> <Link to="/">My Toys </Link> </li>
             <li className="font-semibold"> <Link to="/"> Add A Toy</Link> </li>
             <li className="font-semibold"> <Link to="/"> Blogs</Link> </li>
+            <li className="font-semibold"> <Link to="/login"> Login</Link> </li>
+            <li className="font-semibold"> <Link to="/register"> SignUp</Link> </li>
 
             {/* <div className="flex items-center">
                 <img src="profile-picture.png" alt="Profile Picture" className="h-8 rounded-full" />
