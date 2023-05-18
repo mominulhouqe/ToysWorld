@@ -5,6 +5,7 @@ import Swal from 'sweetalert2'
 import { updateProfile } from 'firebase/auth';
 import app from '../../firebase/firebase.config';
 import {  getAuth} from "firebase/auth";
+import swal from 'sweetalert';
 
 const Register = () => {
     const auth = getAuth(app)
@@ -20,6 +21,10 @@ const Register = () => {
         const password = form.password.value;
         const photoURL = form.photoURL.value;
 
+        if (!/(?=.*[a-z])/.test(password)) {
+            swal ( "Oops" ,  "try to at least one lowercase!" ,  "error" )
+            return;
+        }
 
 
         createUser(email, password)

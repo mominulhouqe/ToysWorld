@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { FaGoogle } from "react-icons/fa";
 import Swal from 'sweetalert2'
 import { AuthContext } from '../../AuthProvider/AuthProvider';
-
+import swal from 'sweetalert';
 
 
 
@@ -15,6 +15,11 @@ const Login = () => {
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
+
+        if (!/(?=.*[a-z])/.test(password)) {
+            swal ( "Oops" ,  "try to at least one lowercase!" ,  "error" )
+            return;
+        }
         signIn(email, password)
         .then(result => {
             const loggedUser = result.user
