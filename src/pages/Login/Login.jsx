@@ -3,6 +3,7 @@ import { FaGoogle } from "react-icons/fa";
 import Swal from 'sweetalert2'
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import swal from 'sweetalert';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 
 
@@ -10,11 +11,20 @@ const Login = () => {
 
     const {signIn} = useContext(AuthContext)
 
+    
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/'
+    const navigate = useNavigate();
+
+
     const handleLogin =(event) => {
         event.preventDefault();
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
+
+
+
 
         if (!/(?=.*[a-z])/.test(password)) {
             swal ( "Oops" ,  "try to at least one lowercase!" ,  "error" )
@@ -28,6 +38,8 @@ const Login = () => {
                 'You Login Successfully!',
                 'success'
             )
+            form.reset('');
+            navigate(from, { replace: true })
         })   
         .catch((error) => {
             let errorMessage = 'Login failed. Please try again.';

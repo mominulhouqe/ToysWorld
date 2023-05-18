@@ -6,11 +6,12 @@ import { updateProfile } from 'firebase/auth';
 import app from '../../firebase/firebase.config';
 import {  getAuth} from "firebase/auth";
 import swal from 'sweetalert';
+import { useNavigate } from 'react-router-dom';
 
 const Register = () => {
     const auth = getAuth(app)
 
-
+    const navigate = useNavigate();
     const { createUser } = useContext(AuthContext);
 
     const handleRegister = (event) => {
@@ -36,6 +37,7 @@ const Register = () => {
                     'success'
                 )
                 form.reset();
+                navigate('/login')
                 return updateProfile(auth.currentUser, {
                     displayName: name, photoURL:photoURL
                 })
