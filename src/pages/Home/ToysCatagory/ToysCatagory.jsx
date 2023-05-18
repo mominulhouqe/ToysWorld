@@ -1,89 +1,57 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 
-const ToysCatagory = () => {
+const ToysCategory = () => {
+  const [items, setItems] = useState([]);
 
+  useEffect(() => {
+    fetch('shops.json')
+      .then((res) => res.json())
+      .then(data => setItems(data.categories)
+      )
+  }, []);
 
-    const categories = [
-        {
-            name: 'Math Toys',
-            subCategories: [
-                {
-                    name: 'Subcategory 1',
-                    toys: [
-                        {
-                            picture: 'toy1.jpg',
-                            name: 'Toy 1',
-                            price: 9.99,
-                            rating: 4.5,
-                        },
-                        {
-                            picture: 'toy2.jpg',
-                            name: 'Toy 2',
-                            price: 14.99,
-                            rating: 3.8,
-                        },
-                    ],
-                },
-                {
-                    name: 'Subcategory 2',
-                    toys: [
-                        // Toys for Subcategory 2
-                    ],
-                },
-            ],
-        },
-        {
-            name: 'Language Toys',
-            subCategories: [
-                // Subcategories and toys for Language Toys category
-            ],
-        },
-        {
-            name: 'Engineering Toys',
-            subCategories: [
-                // Subcategories and toys for Engineering Toys category
-            ],
-        },
-    ];
+  return (
+    <div className="p-4 container mx-auto">
+      <h2 className="text-4xl my-14 font-bold mb-4 text-center">Shop by Category</h2>
+      <Tabs className="text-center">
+        <TabList className="flex mb-14 align-middle justify-center my-16 ">
+          {items.map((category, index) => (
+            <Tab
+              key={index}
+              className="px-4 py-2 bg-gray-200 text-gray-800 rounded cursor-pointer mr-2"
+            >
+              {category.name}
+            </Tab>
+          ))}
+        </TabList>
 
-
-    return (
-        <div>
-            <div>
-                <h2>Shop by Category</h2>
-                <Tabs>
-                    <TabList>
-                        {categories.map((category, index) => (
-                            <Tab key={index}>{category.name}</Tab>
-                        ))}
-                    </TabList>
-
-                    {categories.map((category, index) => (
-                        <TabPanel key={index}>
-                            {category.subCategories.map((subCategory, subIndex) => (
-                                <div key={subIndex}>
-                                    <h3>{subCategory.name}</h3>
-                                    <div className="toys-container">
-                                        {subCategory.toys.map((toy, toyIndex) => (
-                                            <div key={toyIndex} className="toy-item">
-                                                <img src={toy.picture} alt={toy.name} />
-                                                <h4>{toy.name}</h4>
-                                                <p>Price: ${toy.price}</p>
-                                                <p>Rating: {toy.rating}</p>
-                                                <button>View Details</button>
-                                            </div>
-                                        ))}
-                                    </div>
-                                </div>
-                            ))}
-                        </TabPanel>
-                    ))}
-                </Tabs>
-            </div>
-        </div>
-    );
+        {items.map((category, index) => (
+          <TabPanel key={index}>
+            {category.subCategories.map((subCategory, subIndex) => (
+              <div key={subIndex}>
+                <h3 className="text-lg font-semibold mt-4 mb-2">{subCategory.name}</h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                  {subCategory.toys.map((toy, toyIndex) => (
+                    <div key={toyIndex} className="bg-white p-4 rounded shadow">
+                      <img src={toy.picture} alt={toy.name} className="w-full h-40 object-cover mb-2" />
+                      <h4 className="text-base font-semibold">{toy.name}</h4>
+                      <p className="text-gray-600">Price: ${toy.price}</p>
+                      <p className="text-gray-600">Rating: {toy.rating}</p>
+                      <button className="mt-2 bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded">
+                        View Details
+                      </button>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </TabPanel>
+        ))}
+      </Tabs>
+    </div>
+  );
 };
 
-export default ToysCatagory;
+export default ToysCategory;

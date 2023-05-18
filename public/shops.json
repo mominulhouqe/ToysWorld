@@ -1,0 +1,122 @@
+{
+    "categories": [
+      {
+        "name": "Math Toys",
+        "subCategories": [
+          {
+            "name": "Math Puzzles",
+            "toys": [
+              {
+                "picture": "https://i.ibb.co/K7MMjjs/my-img13.jpg",
+                "name": "Number Cruncher",
+                "price": 9.99,
+                "rating": 4.5
+              },
+              {
+                "picture": "https://i.ibb.co/hCZ8nS0/my-img12.png",
+                "name": "Arithmetic Whiz",
+                "price": 14.99,
+                "rating": 3.8
+              }
+            ]
+          },
+          {
+            "name": "Geometry Sets",
+            "toys": [
+              {
+                "picture": "https://i.ibb.co/9ZbwYz6/my-img15-1.jpg",
+                "name": "Shape Explorer",
+                "price": 12.99,
+                "rating": 4.2
+              },
+              {
+                "picture": "https://i.ibb.co/hCZ8nS0/my-img12.png",
+                "name": "Dimension Master",
+                "price": 8.99,
+                "rating": 4.7
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Language Toys",
+        "subCategories": [
+          {
+            "name": "Phonics Fun",
+            "toys": [
+              {
+                "picture": "https://i.ibb.co/hCZ8nS0/my-img12.png",
+                "name": "Word Wizard",
+                "price": 11.99,
+                "rating": 4.1
+              },
+              {
+                "picture": "https://i.ibb.co/ncF91MR/my-img26.jpg",
+                "name": "Letter Explorer",
+                "price": 15.99,
+                "rating": 4.6
+              }
+            ]
+          },
+          {
+            "name": "Storytelling Sets",
+            "toys": [
+              {
+                "picture": "https://i.ibb.co/s3YLGsL/my-img14.jpg",
+                "name": "Tale Teller",
+                "price": 9.99,
+                "rating": 4.3
+              },
+              {
+                "picture": "https://i.ibb.co/dGmQLgn/my-img30.jpg",
+                "name": "Story Weaver",
+                "price": 12.99,
+                "rating": 3.9
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Engineering Toys",
+        "subCategories": [
+          {
+            "name": "Building Blocks",
+            "toys": [
+              {
+                "picture": "https://i.ibb.co/WWvFRjY/my-img23.jpg",
+                "name": "Constructo",
+                "price": 14.99,
+                "rating": 4.4
+              },
+              {
+                "picture": "https://i.ibb.co/M8YyT8h/my-img21.jpg",
+                "name": "Design Master",
+                "price": 10.99,
+                "rating": 4.0
+              }
+            ]
+          },
+          {
+            "name": "Robotic Kits",
+            "toys": [
+              {
+                "picture": "https://i.ibb.co/bNcMJrQ/my-img07-1.jpg",
+                "name": "Mechatron",
+                "price": 13.99,
+                "rating": 4.8
+              },
+              {
+                "picture": "https://i.ibb.co/gZMnCgd/my-img11.jpg",
+                "name": "Tech Whiz",
+                "price": 11.99,
+                "rating": 4.2
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+  
