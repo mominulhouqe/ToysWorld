@@ -1,12 +1,17 @@
 import React, { useContext } from 'react';
 import { FaGoogle } from "react-icons/fa";
 import { AuthContext } from '../../AuthProvider/AuthProvider';
+import Swal from 'sweetalert2'
+import { updateProfile } from 'firebase/auth';
+import app from '../../firebase/firebase.config';
+import {  getAuth} from "firebase/auth";
 
 const Register = () => {
+    const auth = getAuth(app)
 
 
-const {createUser} = useContext(AuthContext);
- 
+    const { createUser } = useContext(AuthContext);
+
     const handleRegister = (event) => {
         event.preventDefault();
         const form = event.target;
@@ -14,15 +19,29 @@ const {createUser} = useContext(AuthContext);
         const email = form.email.value;
         const password = form.password.value;
         const photoURL = form.photoURL.value;
-        console.log(name, email, password,photoURL)
 
 
-        createUser(email, password,photoURL)
+
+        createUser(email, password)
             .then(result => {
                 const user = result.user;
-                console.log('created user', user)
+                Swal.fire(
+                    'Good job!',
+                    'You Register Successfully!',
+                    'success'
+                )
+                form.reset();
+                return updateProfile(auth.currentUser, {
+                    displayName: name, photoURL:photoURL
+                })
             })
-            .catch(error => console.log(error))
+            .catch((error) => {
+                let errorMessage = 'Registration failed. Please try again.';
+                if (error.message) {
+                  errorMessage = error.message;
+                }
+                Swal.fire('Error!', errorMessage, 'error');
+              });
     }
 
 
@@ -30,7 +49,7 @@ const {createUser} = useContext(AuthContext);
         <div >
             <div className="flex justify-center items-center my-20 min-h-screen bg-gray-100">
                 <div className="w-full max-w-sm bg-white shadow-md rounded-2xl px-16 py-10">
-                    <h2 className="text-4xl font-bold mb-6  text-center ">Login</h2>
+                    <h2 className="text-4xl font-bold mb-6  text-center ">Please Register !!!</h2>
                     <form onSubmit={handleRegister}>
                         <div className="mb-4">
                             <label htmlFor="name" className="block text-gray-700 font-semibold mb-2">
@@ -49,12 +68,13 @@ const {createUser} = useContext(AuthContext);
                                 Photo URL
                             </label>
                             <input
-                                type="photoURL"
+                                type="url"
                                 id="photoURL"
-                                name='photoURL'
+                                name="photoURL"
                                 className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:border-blue-500"
-                                placeholder="Enter your photoURL "
+                                placeholder="Enter your photo URL"
                             />
+
                         </div>
                         <div className="mb-4">
                             <label htmlFor="email" className="block text-gray-700 font-semibold mb-2">

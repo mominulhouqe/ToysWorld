@@ -1,12 +1,46 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { FaGoogle } from "react-icons/fa";
+import Swal from 'sweetalert2'
+import { AuthContext } from '../../AuthProvider/AuthProvider';
+
+
+
+
 const Login = () => {
+
+    const {signIn} = useContext(AuthContext)
+
+    const handleLogin =(event) => {
+        event.preventDefault();
+        const form = event.target;
+        const email = form.email.value;
+        const password = form.password.value;
+        signIn(email, password)
+        .then(result => {
+            const loggedUser = result.user
+            Swal.fire(
+                'Good job!',
+                'You Login Successfully!',
+                'success'
+            )
+        })   
+        .catch((error) => {
+            let errorMessage = 'Login failed. Please try again.';
+            if (error.message) {
+              errorMessage = error.message;
+            }
+            Swal.fire('Error!', errorMessage, 'error');
+          });
+
+    }
+
+
     return (
         <div>
             <div className="flex justify-center items-center min-h-screen bg-gray-100">
                 <div className="w-full max-w-sm bg-white shadow-md rounded-2xl px-16 py-16">
                     <h2 className="text-4xl font-bold mb-6  text-center ">Login</h2>
-                    <form>
+                    <form onSubmit={handleLogin}>
                         <div className="mb-4">
                             <label htmlFor="email" className="block text-gray-700 font-semibold mb-2">
                                 Email Address
