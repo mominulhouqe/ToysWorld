@@ -61,7 +61,7 @@ const Navbar = () => {
 
 
         <button onClick={handleLogout} className='py-5 rounded-lg ml-6'>
-           <FaSignOutAlt className='text-green-500 text-3xl'></FaSignOutAlt>
+           <FaSignOutAlt className='text-green-500 text-3xl'></FaSignOutAlt> 
         </button>
       ) : (
         <>
