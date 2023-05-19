@@ -23,17 +23,17 @@ const Navbar = () => {
         </Link>
       </li>
       <li>
-        <Link to='/allToy' className='link-unstyled hover:no-underline'>
+        <Link to='/alltoys' className='link-unstyled hover:no-underline'>
           All Toys
         </Link>
       </li>
       <li>
-        <Link to='/addToy' className='link-unstyled hover:no-underline'>
+        <Link to='/addtoys' className='link-unstyled hover:no-underline'>
           Add A Toy
         </Link>
       </li>
       <li>
-        <Link to='/myToys' className='link-unstyled hover:no-underline'>
+        <Link to='/mytoys' className='link-unstyled hover:no-underline'>
           My Toys
         </Link>
       </li>
