@@ -64,9 +64,13 @@ useTitle('Login')
             navigate(from, { replace: true })
             
         })
-        .catch((error) =>{
-            setError(error.message)
-        } )
+        .catch((error) => {
+            let errorMessage = 'Login failed. Please try again.';
+            if (error.message) {
+              errorMessage = error.message;
+            }
+            Swal.fire('Error!', errorMessage, 'error');
+          });
     }
 
 
