@@ -1,14 +1,17 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import { Link, useNavigate } from 'react-router-dom';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { AuthContext } from '../../../AuthProvider/AuthProvider';
 
 
 const ToysCategory = () => {
   const [items, setItems] = useState([]);
   const navigate = useNavigate(); // Add this line to use the navigate function
+
+  const {user} = useContext(AuthContext)
 
   useEffect(() => {
     AOS.init();
@@ -18,13 +21,13 @@ const ToysCategory = () => {
   }, []);
 
   const handleSinglePage = (toy) => {
-    // if (user == null) {
-    //   toast.error("You have to log in first to view details"); // Display the toast message
-    //   navigate("/login"); // Redirect to the login page
-    // } else {
-    //   navigate("/singleToys");
-    // }
-    localStorage.setItem("SingleToys", JSON.stringify(toy));
+    if (user == null) {
+     swal ( "You have to log in first to view details" , )
+      navigate("/login"); // Redirect to the login page
+    } else {
+      localStorage.setItem("SingleToys", JSON.stringify(toy));
+      navigate("/singleToys");
+    }
   };
   return (
     <div className="p-4 font-serif mb-4 mx-auto bg-slate-100">
