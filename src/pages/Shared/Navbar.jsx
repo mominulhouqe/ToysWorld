@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
+import { FaSignOutAlt } from "react-icons/fa";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -32,11 +33,14 @@ const Navbar = () => {
           Add A Toy
         </Link>
       </li>
-      <li>
-        <Link to='/mytoys' className='link-unstyled hover:no-underline'>
-          My Toys
-        </Link>
-      </li>
+      {
+          user &&
+        <li>
+          <Link to='/mytoys' className='link-unstyled hover:no-underline'>
+            My Toys
+          </Link>
+        </li>
+      }
       <li>
         <Link to='/blog' className='link-unstyled hover:no-underline'>
           Blogs
@@ -54,17 +58,19 @@ const Navbar = () => {
       )}
 
       {user ? (
+
+
         <button onClick={handleLogout} className='py-5 rounded-lg ml-6'>
-          Logout
+           <FaSignOutAlt className='text-green-500 text-3xl'></FaSignOutAlt>
         </button>
       ) : (
         <>
           <Link to='/login'>
             <button className='py-5 rounded-lg ml-6'>Sign In</button>
           </Link>
-          <Link to='/register' className=''>
+          {/* <Link to='/register' className=''>
             <button className='py-5 rounded-lg ml-6'>Register</button>
-          </Link>
+          </Link> */}
         </>
       )}
     </>

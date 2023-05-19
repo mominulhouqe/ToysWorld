@@ -6,7 +6,7 @@ import { updateProfile } from 'firebase/auth';
 import app from '../../firebase/firebase.config';
 import {  getAuth} from "firebase/auth";
 import swal from 'sweetalert';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import useTitle from '../../hooks/useTitle';
 
 const Register = () => {
@@ -73,16 +73,11 @@ const handleGooglePopup = () => {
             Swal.fire('Error!', errorMessage, 'error');
         });
 }
-
-
-
-
-
-    
+ 
     return (
         <div >
             <div className="flex justify-center items-center my-20 min-h-screen bg-gray-100">
-                <div className="w-full max-w-sm bg-white shadow-md rounded-2xl px-16 py-10">
+                <div className="w-full max-w-sm bg-white shadow-md rounded-2xl px-12 py-10">
                     <h2 className="text-4xl font-bold mb-6  text-center ">Please Register !!!</h2>
                     <form onSubmit={handleRegister}>
                         <div className="mb-4">
@@ -151,6 +146,7 @@ onClick={handleGooglePopup}
                                 <FaGoogle></FaGoogle>
                                 Sign In with Google
                             </button>
+                            <p className=''> Already have an account?Please <Link className='text-yellow-500 underline font-semibold' to='/login'>Login</Link></p>
                         </div>
                     </form>
                 </div>

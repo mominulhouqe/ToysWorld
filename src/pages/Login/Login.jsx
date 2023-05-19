@@ -3,7 +3,7 @@ import { FaGoogle } from "react-icons/fa";
 import Swal from 'sweetalert2'
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import swal from 'sweetalert';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import useTitle from '../../hooks/useTitle';
 
 
@@ -106,6 +106,7 @@ useTitle('Login')
                             />
                         </div>
                         <div className="flex items-center space-x-2 flex-wrap space-y-5 sm:justify-center   justify-between">
+                            
                             <button
                                 type="submit"
                                 className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
@@ -121,6 +122,7 @@ useTitle('Login')
                             <FaGoogle></FaGoogle>
                                 Sign In with Google
                             </button>
+                            <p className=''>Are you new here? Please  <Link className='text-yellow-500 underline font-semibold' to='/register'>Register</Link></p>
                         </div>
                     </form>
                 </div>
