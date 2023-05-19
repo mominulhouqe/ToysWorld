@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { FaGoogle } from "react-icons/fa";
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import Swal from 'sweetalert2'
@@ -7,12 +7,15 @@ import app from '../../firebase/firebase.config';
 import {  getAuth} from "firebase/auth";
 import swal from 'sweetalert';
 import { useNavigate } from 'react-router-dom';
+import useTitle from '../../hooks/useTitle';
 
 const Register = () => {
     const auth = getAuth(app)
-
+    const [user, setUser] = useState(null);
     const navigate = useNavigate();
-    const { createUser } = useContext(AuthContext);
+    const { createUser,signInGoogle } = useContext(AuthContext);
+
+    useTitle('Register')
 
     const handleRegister = (event) => {
         event.preventDefault();
@@ -32,7 +35,7 @@ const Register = () => {
             .then(result => {
                 const user = result.user;
                 Swal.fire(
-                    'Good job!',
+
                     'You Register Successfully!',
                     'success'
                 )
@@ -51,6 +54,26 @@ const Register = () => {
               });
     }
    
+const handleGooglePopup = () => {
+    signInGoogle()
+        .then(result => {
+            const loggedUser = result.user;
+            Swal.fire(
+                'You Login Successfully!',
+                'success'
+            )
+            setUser(loggedUser);
+            navigate('/'); 
+        })
+        .catch((error) => {
+            let errorMessage = 'Registration failed. Please try again.';
+            if (error.message) {
+                errorMessage = error.message;
+            }
+            Swal.fire('Error!', errorMessage, 'error');
+        });
+}
+
 
 
 
@@ -122,7 +145,7 @@ const Register = () => {
 
                             <button
                                 type="button"
-
+onClick={handleGooglePopup}
                                 className="flex gap-2 items-center btn  hover:bg-red-600  btn-outline  font-semibold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                             >
                                 <FaGoogle></FaGoogle>

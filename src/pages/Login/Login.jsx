@@ -1,22 +1,23 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { FaGoogle } from "react-icons/fa";
 import Swal from 'sweetalert2'
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import swal from 'sweetalert';
 import { useLocation, useNavigate } from 'react-router-dom';
+import useTitle from '../../hooks/useTitle';
 
 
 
 const Login = () => {
 
-    const {signIn} = useContext(AuthContext)
+    const {signIn,signInGoogle} = useContext(AuthContext)
 
-    
+    const [user, setUser  ] = useState(null);
     const location = useLocation();
     const from = location.state?.from?.pathname || '/'
     const navigate = useNavigate();
 
-
+useTitle('Login')
     const handleLogin =(event) => {
         event.preventDefault();
         const form = event.target;
@@ -34,7 +35,7 @@ const Login = () => {
         .then(result => {
             const loggedUser = result.user
             Swal.fire(
-                'Good job!',
+
                 'You Login Successfully!',
                 'success'
             )
@@ -49,6 +50,23 @@ const Login = () => {
             Swal.fire('Error!', errorMessage, 'error');
           });
 
+    }
+    const handleGooglePopup =()=>{
+        signInGoogle()
+        .then(result => {
+            const loggedUser = result.user;
+            Swal.fire(
+                
+                'You Login Successfully!',
+                'success'
+            )
+            setUser(loggedUser);
+            navigate(from, { replace: true })
+            
+        })
+        .catch((error) =>{
+            setError(error.message)
+        } )
     }
 
 
@@ -93,7 +111,7 @@ const Login = () => {
 
                             <button
                                 type="button"
-                               
+                               onClick={handleGooglePopup}
                                 className="flex gap-2 items-center btn  hover:bg-red-600  btn-outline  font-semibold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                             >
                             <FaGoogle></FaGoogle>

@@ -1,8 +1,10 @@
 import React from 'react';
 import { Link, useRouteError } from 'react-router-dom';
+import useTitle from '../../hooks/useTitle';
 
 const ErrorPage = () => {
   const { error, status } = useRouteError();
+  useTitle('Error')
   return (
     <section className=''>
       <div className='w-full mt-16 mx-auto flex justify-center items-center'>

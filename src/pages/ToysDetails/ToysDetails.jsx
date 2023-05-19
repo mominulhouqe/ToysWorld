@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { FaBookmark, FaHeart, FaRegStar, FaStar } from "react-icons/fa";
 import Rating from 'react-rating';
+import useTitle from '../../hooks/useTitle';
 const ToysDetails = () => {
     const [toys, setToys] = useState(null);
-
+useTitle('ToysDetails')
     useEffect(() => {
         const storedToyData = localStorage.getItem("SingleToys");
         if (storedToyData) {
@@ -37,14 +38,14 @@ const ToysDetails = () => {
                         </svg>
 
                             : {toys?.likes}</span></p>
-                        <p>Rating: {toys?.rating}</p>
-                     
+                        
                         <div className="rating">
                             <input type="radio" name="rating-1" className="mask mask-star" />
-                            <input type="radio" name="rating-1" className="mask mask-star" checked />
+                            <input type="radio" name="rating-1" className="mask mask-star"  />
                             <input type="radio" name="rating-1" className="mask mask-star" />
+                            <input type="radio" name="rating-1" className="mask mask-star" checked/>
                             <input type="radio" name="rating-1" className="mask mask-star" />
-                            <input type="radio" name="rating-1" className="mask mask-star" />
+                             {toys?.rating}
                         </div>
                     </div>
                     <div className="heart-animation absolute top-0 right-0 m-2">

@@ -5,6 +5,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
+
 const ToysCategory = () => {
   const [items, setItems] = useState([]);
   const navigate = useNavigate(); // Add this line to use the navigate function
