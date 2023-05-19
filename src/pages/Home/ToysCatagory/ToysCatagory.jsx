@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 const ToysCategory = () => {
   const [items, setItems] = useState([]);
+  const navigate = useNavigate(); // Add this line to use the navigate function
 
   useEffect(() => {
     AOS.init();
@@ -15,6 +16,15 @@ const ToysCategory = () => {
       .then(data => setItems(data.categories));
   }, []);
 
+  const handleSinglePage = (toy) => {
+    // if (user == null) {
+    //   toast.error("You have to log in first to view details"); // Display the toast message
+    //   navigate("/login"); // Redirect to the login page
+    // } else {
+    //   navigate("/singleToys");
+    // }
+    localStorage.setItem("SingleToys", JSON.stringify(toy));
+  };
   return (
     <div className="p-4 font-serif mb-4 mx-auto bg-slate-100">
       <h2 className="text-5xl my-14 font-extrabold mb-4 text-center text-orange-500">Shop by Category</h2>
@@ -50,10 +60,12 @@ const ToysCategory = () => {
                         <p className="text-gray-600">Price: ${toy.price}</p>
                         <p className="text-gray-600">Rating: {toy.rating}</p>
                       </Link>
-                      <Link to={`/toys/${toy.id}`} className="card-link">
-                        <button className="mt-2 bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded">
-                          View Details
-                        </button>
+                      <Link
+                        to="/details"
+                        onClick={() => handleSinglePage(toy)}
+                        className="btn btn-primary"
+                      >
+                        View Details
                       </Link>
                     </div>
                   ))}
