@@ -5,24 +5,21 @@ import { AuthContext } from '../../AuthProvider/AuthProvider';
 const MyToys = () => {
     const [toysData, setToysData] = useState([]);
 
-    const { user } = useContext(AuthContext)
-    console.log(user);
+    const { user } = useContext(AuthContext);
 
-    useTitle('My Toys')
+    useTitle('My Toys');
 
-    const url = `http://localhost:5000/addToys?email=${user?.sellerEmail
-        }`;
-        console.log(url);
+    const url = `http://localhost:5000/addToys?email=${user?.email}`;
+   
     useEffect(() => {
         fetch(url)
             .then(res => res.json())
-            .then(data => setToysData(data))
+            .then(data => setToysData(data));
     }, [url]);
-
 
     return (
         <div>
-            <h2 className="text-3xl font-bold mb-6 text-center">My Toys {toysData.length}</h2>
+            <h2 className="text-3xl font-bold mb-6 text-center">My Toys ({toysData.length})</h2>
 
             <div className="flex justify-center">
                 <div className="w-full lg:w-3/4">
