@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
+import useTitle from '../../hooks/useTitle';
 
 const MyToys = () => {
   const [toysData, setToysData] = useState([]);
-
+useTitle('My Toys')
   useEffect(() => {
     fetch(('http://localhost:5000/addToys'))
       .then((res) => res.json())
@@ -39,7 +40,7 @@ const MyToys = () => {
                     <td className="py-2 lg:py-4 px-4 lg:px-6 whitespace-nowrap">{toy?.quantity}</td>
                     <td className="py-2 lg:py-4 space-x-2 px-4 lg:px-6 whitespace-nowrap">
                       <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                        Updated
+                        Update
                       </button>
                       <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                         Delete
