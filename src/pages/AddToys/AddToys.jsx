@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import Swal from 'sweetalert2'
 import useTitle from '../../hooks/useTitle';
+import { AuthContext } from '../../AuthProvider/AuthProvider';
 
 const AddToys = () => {
     useTitle('Add Toys')
@@ -10,32 +11,34 @@ const AddToys = () => {
         handleSubmit,
         formState: { errors },
         reset
-      } = useForm();
-      
+    } = useForm();
+
+
+    const {user}  = useContext(AuthContext)
+
+
     const onSubmit = (data) => {
         console.log(data);
 
         fetch('http://localhost:5000/addToys', {
-            method:'POST',
-            headers:{
+            method: 'POST',
+            headers: {
                 'content-type': 'application/json'
             },
-            body:JSON.stringify(data)
+            body: JSON.stringify(data)
         })
-        .then(res => res.json())
-        .then(data => {
+            .then(res => res.json())
+            .then(data => {
 
-            console.log(data);
+                console.log(data);
 
-            Swal.fire(
-                'Your Toys Added Successfully!',
-                'success'
-            )
-          
-            reset();
-        })
+                Swal.fire(
+                    'Your Toys Added Successfully!',
+                    'success'
+                )
 
-
+                reset();
+            })
 
     };
 
@@ -60,11 +63,11 @@ const AddToys = () => {
                     <div className='lg:flex lg:gap-5'>
                         <div className="mb-4 md:w-1/2 lg:w-1/2">
                             <label className="block">Seller Name:</label>
-                            <input type="text" name="sellerName" className="border border-gray-300 px-4 py-2 rounded w-full" {...register('sellerName')} />
+                            <input type="text" name="sellerName" defaultValue={user.displayName}  className="border border-gray-300 px-4 py-2 rounded w-full" {...register('sellerName')} />
                         </div>
                         <div className="mb-4 md:w-1/2 lg:w-1/2">
                             <label className="block">Seller Email:</label>
-                            <input type="email" name="sellerEmail" className="border border-gray-300 px-4 py-2 rounded w-full" {...register('sellerEmail')} />
+                            <input type="email" name="sellerEmail" defaultValue={user.email} className="border border-gray-300 px-4 py-2 rounded w-full" {...register('sellerEmail')} />
                         </div>
 
                     </div>
@@ -88,16 +91,16 @@ const AddToys = () => {
                         </div>
                     </div>
 
-                    <div  className='lg:flex lg:gap-5'>
+                    <div className='lg:flex lg:gap-5'>
                         <div className="mb-4 md:w-1/2 lg:w-1/2">
                             <label className="block">Available Quantity:</label>
                             <input type="number" name="quantity" className="border border-gray-300 px-4 py-2 rounded w-full" {...register('quantity')} />
                         </div>
                     </div>
-                        <div className="mb-4">
-                            <label className="block">Detail Description:</label>
-                            <textarea name="description" className="border border-gray-300 px-4 py-2 rounded w-full" {...register('description')}></textarea>
-                        </div>
+                    <div className="mb-4">
+                        <label className="block">Detail Description:</label>
+                        <textarea name="description" className="border border-gray-300 px-4 py-2 rounded w-full" {...register('description')}></textarea>
+                    </div>
 
                     <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded">Add Toy</button>
                 </form>
