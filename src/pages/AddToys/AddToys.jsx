@@ -18,7 +18,7 @@ const AddToys = () => {
     const onSubmit = (data) => {
         console.log(data);
 
-        fetch('http://localhost:5000/addToys', {
+        fetch('https://toys-server-mu.vercel.app/addToys', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -39,26 +39,6 @@ const AddToys = () => {
     };
 
 
-
-    /* 
-    
-    <div className="form-group">
-          <label htmlFor="picture"><span className='font-bold'>Picture URL of the toy:</span></label>
-          <input
-            type="text"
-            id="picture"
-            className="input-field"
-            {...register('picture', {
-              required: 'Picture URL is required',
-              pattern: {
-                value: /^(ftp|http|https):\/\/[^ "]+$/,
-                message: 'Invalid URL',
-              },
-            })}
-          />
-          {errors.picture && <span className="error">{errors.picture.message}</span>}
-        </div>
-    */
 
     return (
         <div className="bg-slate-400 min-h-screen  flex items-center font-serif font-bold justify-center">
