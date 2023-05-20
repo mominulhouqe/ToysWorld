@@ -12,12 +12,12 @@ const Home = () => {
     useTitle('Home')
     return (
         <div>
-        
+
             <Banner></Banner>
-        <ToysCatagory></ToysCatagory>
-        <Gallary></Gallary>
-        <Newsletter />
-<Features />
+            <ToysCatagory></ToysCatagory>
+            <Gallary></Gallary>
+            <Features />
+            <Newsletter />
         </div>
     );
 };

@@ -1,7 +1,7 @@
 import React from 'react';
 const Newsletter = () => {
     return (
-        <div className='container mx-auto mt-5 flex justify-evenly items-center bg-gradient-to-r from-sky-400 to-sky-500 py-16 px-8'>
+        <div className='container mx-auto flex justify-evenly items-center bg-gradient-to-r from-pink-500 to-purple-500 py-16 px-8'>
             <div className='max-w-md'>
                 <h1 className='text-4xl text-white font-bold mb-6'>Come Learn with Us!</h1>
                 <p className='text-white text-lg mb-6'>Sign up for our newsletter and receive exciting offers!</p>

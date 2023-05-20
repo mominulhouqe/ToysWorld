@@ -58,18 +58,7 @@ https://i.ibb.co/By6XRpt/my-img07-2.jpg
 https://i.ibb.co/2vVCCMn/my-img07.jpg
 
 
-https://i.ibb.co/3Rrm2LV/my-img08.jpg
-https://i.ibb.co/2N2cjmc/my-img09-1.jpg
-https://i.ibb.co/rxY56Rq/my-img09-2.jpg
-https://i.ibb.co/BL941GB/my-img09.jpg
-https://i.ibb.co/KrWZ6c4/my-img10-1.jpg
-https://i.ibb.co/PM72hFn/my-img10-2.jpg
-https://i.ibb.co/zZfDMy5/my-img10.jpg
-https://i.ibb.co/RH074YG/my-img11-1.jpg
-https://i.ibb.co/bztky4M/my-img11-2.jpg
-https://i.ibb.co/kyYNtRC/my-img11.jpg
-https://i.ibb.co/zRwjwCF/my-img12.jpg
-https://i.ibb.co/p0kgtk4/my-img13.jpg
+
 https://i.ibb.co/VLfN341/my-img14.jpg
 https://i.ibb.co/zFXZSGH/my-img15.jpg
 https://i.ibb.co/Nj1ng7G/my-img16.jpg
