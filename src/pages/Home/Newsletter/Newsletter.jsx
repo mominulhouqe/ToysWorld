@@ -1,5 +1,4 @@
 import React from 'react';
-
 const Newsletter = () => {
     return (
         <div className='container mx-auto mt-5 flex justify-evenly items-center bg-gradient-to-r from-sky-400 to-sky-500 py-16 px-8'>
@@ -23,6 +22,7 @@ const Newsletter = () => {
                     </button>
                 </div>
             </div>
+          
         </div>
     );
 };
