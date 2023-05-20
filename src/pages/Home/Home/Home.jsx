@@ -5,6 +5,7 @@ import Footer from '../../Shared/Footer';
 import ToysCatagory from '../ToysCatagory/ToysCatagory';
 import Gallary from '../Gallary/Gallary';
 import useTitle from '../../../hooks/useTitle';
+import Newsletter from '../Newsletter/Newsletter';
 
 const Home = () => {
     useTitle('Home')
@@ -14,6 +15,7 @@ const Home = () => {
             <Banner></Banner>
         <ToysCatagory></ToysCatagory>
         <Gallary></Gallary>
+        <Newsletter />
 
         </div>
     );
