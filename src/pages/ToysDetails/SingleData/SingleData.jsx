@@ -32,7 +32,7 @@ const SingleData = () => {
     }
 
     return (
-        <div className="bg-base-200">
+        <div className="bg-base-200 ">
             <div className="container mx-auto px-4 py-12">
                 <div className="bg-white rounded-lg shadow-xl items-center justify-center gap-10 md:flex">
                     <div className="md:flex-shrink-0">

@@ -57,7 +57,7 @@ const MyToys = () => {
     <div>
       <h2 className="text-3xl font-bold mb-6 text-center">My Toys ({toysData.length})</h2>
 
-      <div className="flex justify-center">
+      <div className="flex mb-10 justify-center">
         <div className="w-full lg:w-3/4">
           <div className="overflow-x-auto">
             <table className="w-full bg-white shadow-lg rounded-lg">
