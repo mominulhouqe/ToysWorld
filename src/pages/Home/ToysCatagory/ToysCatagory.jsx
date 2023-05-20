@@ -58,7 +58,7 @@ const ToysCategory = () => {
                       data-aos-delay={toyIndex * 100}
                       className="bg-white p-4 rounded-2xl shadow"
                     >
-                      <Link to={`/toys/${toy.id}`} className="card-link">
+                      <Link to={`/toys/${toy.id}`} className="card-link" >
                         <img src={toy.picture} alt={toy.name} className="w-full h-40 object-cover mb-2" />
                         <h4 className="text-base font-semibold">{toy.name}</h4>
                         <p className="text-gray-600">Price: ${toy.price}</p>

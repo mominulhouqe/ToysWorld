@@ -7,7 +7,7 @@ const Gallery = () => {
 
   useEffect(() => {
     AOS.init();
-    fetch('gallary.json')
+    fetch('https://toys-server-mu.vercel.app/insertToys')
       .then(res => res.json())
       .then(data => setGallery(data))
       .catch(error => console.log(error));
@@ -15,24 +15,29 @@ const Gallery = () => {
 
   return (
     <div>
-      <div className='w-1/2 mx-auto'>
-        <h1 className='text-5xl my-10 text-center font-bold text-orange-500'>Popular Products Gallery</h1> <hr />
-        <p className=''>Nisl vel pretium lectus quam id leo in vitae. Eros in cursus turpis massa. Blandit massa enim nec dui nunc. Turpis in eu mi bibendum neque egestas. Viverra nam libero justo laoreet sit amet cursus sit.</p>
+      <div className='container w-1/2 mx-auto'>
+        <h1 className='text-5xl my-10 text-center font-bold text-orange-500'>Popular Products Gallery</h1>
+        <hr />
+        <p className='text-center text-gray-600 mt-6'>
+          Nisl vel pretium lectus quam id leo in vitae. Eros in cursus turpis massa. Blandit massa enim nec dui nunc.
+          Turpis in eu mi bibendum neque egestas. Viverra nam libero justo laoreet sit amet cursus sit.
+        </p>
       </div>
       <hr className='my-16' />
-      <div className="font-serif flex flex-wrap justify-center space-x-5 space-y-5">
+      <div className="flex flex-wrap justify-center gap-3">
         {gallery.map(item => (
-          <div key={item.id} className="bg-base-100 shadow-xl w-full lg:w-1/4 md:w-1/3" data-aos="fade-right" data-aos-duration="800">
-            <figure className="w-full">
-              <img src={item.img} alt={`Toy ${item.id}`} className="rounded-lg h-96 w-full shadow-lg" />
-            </figure>
-            <div className="card-body">
-              <h2 className="card-title">{item.name}</h2>
-              <p>Rating: {item.rating}</p>
-              <p>Like: {item.like}</p>
-        
-              <div className="card-actions justify-end">
-                <button className="btn btn-primary">order now</button>
+          <div
+            key={item._id}
+            className="w-full lg:w-1/3 xl:w-1/4 p-4"
+            data-aos-anchor-placement="top-center"
+            data-aos="fade-up"
+            data-aos-duration="800"
+          >
+            <div className="bg-white rounded-lg shadow-lg">
+              <img src={item.img} alt={`Toy ${item._id}`} className="rounded-t-lg" />
+              <div className="p-4">
+                <p className="text-lg font-semibold mb-2">{item.title}</p>
+                <p className="text-gray-600">Like: {item.like}</p>
               </div>
             </div>
           </div>
@@ -43,3 +48,36 @@ const Gallery = () => {
 };
 
 export default Gallery;
+
+
+/* 
+
+
+https://i.ibb.co/xGMVsYB/my-img07-1.jpg
+https://i.ibb.co/By6XRpt/my-img07-2.jpg
+https://i.ibb.co/2vVCCMn/my-img07.jpg
+
+
+https://i.ibb.co/3Rrm2LV/my-img08.jpg
+https://i.ibb.co/2N2cjmc/my-img09-1.jpg
+https://i.ibb.co/rxY56Rq/my-img09-2.jpg
+https://i.ibb.co/BL941GB/my-img09.jpg
+https://i.ibb.co/KrWZ6c4/my-img10-1.jpg
+https://i.ibb.co/PM72hFn/my-img10-2.jpg
+https://i.ibb.co/zZfDMy5/my-img10.jpg
+https://i.ibb.co/RH074YG/my-img11-1.jpg
+https://i.ibb.co/bztky4M/my-img11-2.jpg
+https://i.ibb.co/kyYNtRC/my-img11.jpg
+https://i.ibb.co/zRwjwCF/my-img12.jpg
+https://i.ibb.co/p0kgtk4/my-img13.jpg
+https://i.ibb.co/VLfN341/my-img14.jpg
+https://i.ibb.co/zFXZSGH/my-img15.jpg
+https://i.ibb.co/Nj1ng7G/my-img16.jpg
+https://i.ibb.co/J7955H6/my-img17.jpg
+https://i.ibb.co/ChnJ4f6/my-img18.jpg
+https://i.ibb.co/VNTgXPV/my-img19.jpg
+https://i.ibb.co/1mDzZF0/my-img20.jpg
+https://i.ibb.co/fkFM6XB/my-img21.jpg
+https://i.ibb.co/tmB39Yg/my-img22.jpg
+
+*/
