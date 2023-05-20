@@ -3,7 +3,11 @@ import useTitle from '../../hooks/useTitle';
 
 const AllToys = () => {
   const [toysData, setToysData] = useState([]);
-useTitle('All Toys')
+
+  const [search, setSearch] = useState("");
+
+
+  useTitle('All Toys')
   useEffect(() => {
     fetch(('http://localhost:5000/addToys'))
       .then((res) => res.json())
@@ -15,7 +19,10 @@ useTitle('All Toys')
   return (
     <div>
       <h2 className="text-3xl font-bold mb-6 text-center">All Toys</h2>
-
+      <div className='bg-slate-300 p-5'>
+        <input type="text" onChange={(e) => setSearch(e.target.value)} />
+        <button  className='btn'>Search</button>
+      </div>
       <div className="flex justify-center">
         <div className="w-full lg:w-3/4">
           <div className="overflow-x-auto">

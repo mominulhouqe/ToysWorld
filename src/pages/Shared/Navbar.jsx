@@ -28,11 +28,15 @@ const Navbar = () => {
           All Toys
         </Link>
       </li>
-      <li>
+
+      {
+        user &&
+        <li>
         <Link to='/addtoys' className='link-unstyled hover:no-underline'>
           Add A Toy
         </Link>
-      </li>
+      </li>}
+
       {
           user &&
         <li>
