@@ -2,11 +2,13 @@ import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 
 const Updated = () => {
-    const viewsData = useLoaderData()
-    console.log(viewsData);
+ 
+    const loader = useLoaderData()
+    console.log(loader);
     return (
         <div>
-            <h2>Updated {viewsData.length}</h2>
+          data {loader.length}
+        
         </div>
     );
 };

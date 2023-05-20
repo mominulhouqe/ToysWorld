@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import useTitle from '../../hooks/useTitle';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import Swal from 'sweetalert2';
+import { Link } from 'react-router-dom';
 
 const MyToys = () => {
   const [toysData, setToysData] = useState([]);
@@ -80,9 +81,13 @@ const MyToys = () => {
                     <td className="py-2 lg:py-4 px-4 lg:px-6 whitespace-nowrap">{toy?.price}</td>
                     <td className="py-2 lg:py-4 px-4 lg:px-6 whitespace-nowrap">{toy?.quantity}</td>
                     <td className="py-2 lg:py-4 space-x-2 px-4 lg:px-6 whitespace-nowrap">
-                      <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                    
+                     <Link to={`/update/${toy._id}`}> <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                         Update
-                      </button>
+                      </button></Link>
+                    
+                    
+                    
                       <button onClick={() => handleDelete(toy._id)} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                         Delete
                       </button>

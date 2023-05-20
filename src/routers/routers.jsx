@@ -40,9 +40,9 @@ const router = createBrowserRouter([
                 element: <PrivateRoute><AddToys></AddToys></PrivateRoute>
             },
             {
-                path: "updated/:id",
+                path: "/update/:id",
                 element: <Updated></Updated>,
-                loader: ({ params }) => fetch(`https://toys-server-mu.vercel.app/addToys/${params.id}`)
+                loader: ({params}) => fetch(`https://toys-server-mu.vercel.app/addToys/${params.id}`)
 
             }
             ,
