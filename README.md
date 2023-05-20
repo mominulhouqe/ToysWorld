@@ -10,7 +10,7 @@
 
 ## I used Those technology are .....
 
-- - 1.HTML For Website overview
+-  1.HTML For Website overview
 - 2.CSS For Styling
 - 3.Tailwind css
 - 4.DaisyUI
