@@ -24,12 +24,7 @@ const ToysDetails = () => {
     }
 
     return (
-
-
-
         <div className="flex justify-center mt-10 mb-10">
-
-
             <div className="card bg-base-100 shadow-xl w-96 relative overflow-hidden">
                 <figure>
                     <img className="w-full h-96" src={toys?.picture} alt={toys?.name} />

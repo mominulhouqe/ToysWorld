@@ -72,7 +72,7 @@ const AllToys = () => {
                     <td className="py-2 lg:py-4 px-4 lg:px-6 whitespace-nowrap">{toy?.price}</td>
                     <td className="py-2 lg:py-4 px-4 lg:px-6 whitespace-nowrap">{toy?.quantity}</td>
                     <td className="py-2 lg:py-4 px-4 lg:px-6 whitespace-nowrap">
-                      <Link to={`/details`}>
+                      <Link to={`/singleData`}>
                         <button
                           onClick={() => handleSinglePage(toy)}
                           className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"

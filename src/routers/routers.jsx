@@ -11,6 +11,7 @@ import AllToys from "../pages/AllToys/AllToys";
 import MyToys from "../pages/MyToys/MyToys";
 import AddToys from "../pages/AddToys/AddToys";
 import Updated from "../pages/AddToys/updated/Updated";
+import SingleData from "../pages/ToysDetails/SingleData/SingleData";
 
 const router = createBrowserRouter([
     {
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
             {
                 path: "mytoys",
                 element: <MyToys></MyToys>
+            },
+            {
+                path:'singleData',
+                element:<SingleData></SingleData>
             },
             {
                 path: "addtoys",
