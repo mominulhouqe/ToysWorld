@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import useTitle from '../../hooks/useTitle';
+import { Link } from 'react-router-dom';
 
 const AllToys = () => {
   const [toysData, setToysData] = useState([]);
@@ -23,10 +24,20 @@ const AllToys = () => {
       });
   };
 
+  const handleSinglePage = (toy) => {
+    // if (user == null) {
+    //  swal ( "You have to log in first to view details" , )
+    //   navigate("/login"); // Redirect to the login page
+    // } else {
+    //   navigate("/singleToys");
+    // }
+    localStorage.setItem("SingleToys", JSON.stringify(toy));
+  };
+
   return (
     <div>
       <h2 className="text-3xl font-bold mb-6 text-center">All Toys</h2>
-      <div className="bg-gray-300 p-5">
+      <div className="bg-gray-300 w-3/4 mx-auto text-center p-5">
         <input
           type="text"
           value={search}
@@ -61,9 +72,14 @@ const AllToys = () => {
                     <td className="py-2 lg:py-4 px-4 lg:px-6 whitespace-nowrap">{toy?.price}</td>
                     <td className="py-2 lg:py-4 px-4 lg:px-6 whitespace-nowrap">{toy?.quantity}</td>
                     <td className="py-2 lg:py-4 px-4 lg:px-6 whitespace-nowrap">
-                      <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                        View Details
-                      </button>
+                      <Link to={`/details`}>
+                        <button
+                          onClick={() => handleSinglePage(toy)}
+                          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                        >
+                          View Details
+                        </button>
+                      </Link>
                     </td>
                   </tr>
                 ))}

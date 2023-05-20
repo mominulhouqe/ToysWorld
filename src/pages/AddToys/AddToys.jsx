@@ -38,6 +38,28 @@ const AddToys = () => {
             });
     };
 
+
+
+    /* 
+    
+    <div className="form-group">
+          <label htmlFor="picture"><span className='font-bold'>Picture URL of the toy:</span></label>
+          <input
+            type="text"
+            id="picture"
+            className="input-field"
+            {...register('picture', {
+              required: 'Picture URL is required',
+              pattern: {
+                value: /^(ftp|http|https):\/\/[^ "]+$/,
+                message: 'Invalid URL',
+              },
+            })}
+          />
+          {errors.picture && <span className="error">{errors.picture.message}</span>}
+        </div>
+    */
+
     return (
         <div className="bg-slate-400 min-h-screen  flex items-center font-serif font-bold justify-center">
             <div className="p-8 bg-white mt-10 mb-10 rounded shadow">
@@ -46,7 +68,19 @@ const AddToys = () => {
                     <div className="lg:flex lg:gap-5">
                         <div className="mb-4 md:w-1/2 lg:w-1/2">
                             <label className="block">Picture URL:</label>
-                            <input type="text" name="pictureUrl" className="border border-gray-300 px-4 py-2 rounded w-full" {...register('pictureUrl')} />
+                            <input
+                                type="text"
+                                name="picture"
+                                className={`border border-gray-300 px-4 py-2 rounded w-full ${errors.picture ? 'border-red-500' : ''}`}
+                                {...register('picture', {
+                                    required: 'Picture URL is required',
+                                    pattern: {
+                                        value: /^(ftp|http|https):\/\/[^ "]+$/,
+                                        message: 'Invalid URL',
+                                    },
+                                })}
+                            />
+                            {errors.picture && <span className="text-red-500">{errors.picture.message}</span>}
                         </div>
                         <div className="mb-4 md:w-1/2 lg:w-1/2">
                             <label className="block">Name:</label>
