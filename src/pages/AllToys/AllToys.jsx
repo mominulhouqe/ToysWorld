@@ -3,25 +3,40 @@ import useTitle from '../../hooks/useTitle';
 
 const AllToys = () => {
   const [toysData, setToysData] = useState([]);
+  const [search, setSearch] = useState('');
 
-  const [search, setSearch] = useState("");
+  useTitle('All Toys');
 
-
-  useTitle('All Toys')
   useEffect(() => {
-    fetch(('http://localhost:5000/addToys'))
+    fetch('http://localhost:5000/addToys')
       .then((res) => res.json())
       .then((data) => {
         setToysData(data);
       });
   }, []);
 
+  const handleSearch = () => {
+    fetch(`http://localhost:5000/searchByToyName/${search}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setToysData(data);
+      });
+  };
+
   return (
     <div>
       <h2 className="text-3xl font-bold mb-6 text-center">All Toys</h2>
-      <div className='bg-slate-300 p-5'>
-        <input type="text" onChange={(e) => setSearch(e.target.value)} />
-        <button  className='btn'>Search</button>
+      <div className="bg-gray-300 p-5">
+        <input
+          type="text"
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+          placeholder="Search by Toy Name"
+          className="p-2 border border-gray-400 rounded mr-2"
+        />
+        <button onClick={handleSearch} className="btn bg-blue-500 hover:bg-blue-700 text-white">
+          Search
+        </button>
       </div>
       <div className="flex justify-center">
         <div className="w-full lg:w-3/4">
