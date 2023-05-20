@@ -12,15 +12,15 @@ In our math category, we offer an exciting array of toys that help kids develop 
 
 ## I used Those technology are .....
 
-1.HTML For Website overview
-2.CSS For Styling
-3.Tailwind css
-4.DaisyUI
-6.React
-7.vite
-8.Firebase
-9.Deploy server on vercel
-10.mongoDB
+- 1.HTML For Website overview
+- 2.CSS For Styling
+- 3.Tailwind css
+- 4.DaisyUI
+- 6.React
+- 7.vite
+- 8.Firebase
+- 9.Deploy server on vercel
+- 10.mongoDB
 
 ## Features
 -------------------
