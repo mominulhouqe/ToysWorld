@@ -55,6 +55,7 @@ const AllToys = () => {
             <table className="w-full bg-white shadow-lg rounded-lg">
               <thead>
                 <tr className="bg-gray-200 text-gray-700 uppercase text-sm leading-normal">
+                  <th className="py-3 px-6 text-left">No</th>
                   <th className="py-3 px-6 text-left">Seller</th>
                   <th className="py-3 px-6 text-left">Toy Name</th>
                   <th className="py-3 px-6 text-left">Sub-category</th>
@@ -66,6 +67,8 @@ const AllToys = () => {
               <tbody>
                 {toysData.map((toy, index) => (
                   <tr key={index} className="border-b border-gray-200 hover:bg-gray-100">
+                    
+                    <td className="py-2 lg:py-4 px-4 lg:px-6 whitespace-nowrap">{index +1 }</td>
                     <td className="py-2 lg:py-4 px-4 lg:px-6 whitespace-nowrap">{toy?.sellerName}</td>
                     <td className="py-2 lg:py-4 px-4 lg:px-6 whitespace-nowrap">{toy?.name}</td>
                     <td className="py-2 lg:py-4 px-4 lg:px-6 whitespace-nowrap">{toy?.subCategory}</td>
