@@ -20,7 +20,7 @@ const UpdatedForm = () => {
 
       if (response.ok) {
         toast.success('Toy updated successfully!');
-        e.target.reset(); // Reset the form
+        reset(); // Reset the form
       } else {
         throw new Error('Failed to update toy.');
       }
@@ -71,7 +71,7 @@ const UpdatedForm = () => {
               {...register('description')}
             />
           </div>
-          <button className="text-primary bg-orange-600 font-bold text-2xl px-4 py-2 rounded" type="submit">Update!</button>
+          <button className="btn btn-primary" type="submit">Update!</button>
         </form>
       </div>
     </div>

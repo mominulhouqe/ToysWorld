@@ -3,43 +3,68 @@ import { motion } from 'framer-motion';
 const Features = () => {
     return (
         <div>
-            <div className='bg-gradient-to-r from-slate-300-500 container mx-auto text-blue-50 to-purple-500 py-16 px-8'>
-                <div className='container mx-auto'>
-                    <h2 className='text-4xl font-bold text-orange-400 text-center mb-8'>Explore Our Toy Collection</h2>
-                    <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
-                        <motion.div
-                            className='bg-white rounded-lg shadow-lg p-6'
-                            initial={{ opacity: 0 }}
-                            whileInView={{ opacity: 1 }}
-                            viewport={{ once: true }}
-                        >
-                            <img src='https://i.ibb.co/BL941GB/my-img09.jpg' alt='Toy' className='rounded-lg mb-4' />
-                            <h3 className='text-xl text-gray-800 font-semibold mb-2'>Educational Toys</h3>
-                            <p className='text-gray-600'>Engage your child's curiosity and learning with our educational toy collection.</p>
-                        </motion.div>
-                        <motion.div
-                            className='bg-white rounded-lg shadow-lg p-6'
-                            initial={{ opacity: 0 }}
-                            whileInView={{ opacity: 1 }}
-                            viewport={{ once: true }}
-                        >
-                            <img src='https://i.ibb.co/KrWZ6c4/my-img10-1.jpg' alt='Toy' className='rounded-lg mb-4' />
-                            <h3 className='text-xl text-gray-800 font-semibold mb-2'>STEM Toys</h3>
-                            <p className='text-gray-600'>Spark creativity and critical thinking skills with our wide range of STEM toys.</p>
-                        </motion.div>
-                        <motion.div
-                            className='bg-white rounded-lg shadow-lg p-6'
-                            initial={{ opacity: 0 }}
-                            whileInView={{ opacity: 1 }}
-                            viewport={{ once: true }}
-                        >
-                            <img src='https://i.ibb.co/rxY56Rq/my-img09-2.jpg' alt='Toy' className='rounded-lg mb-4' />
-                            <h3 className='text-xl text-gray-800 font-semibold mb-2'>Building Blocks</h3>
-                            <p className='text-gray-600'>Encourage imagination and motor skills development with our building block sets.</p>
-                        </motion.div>
+
+            <section className="bg-gray-100 py-16">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="text-center">
+                        <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                            Our Happy Customers
+                        </h2>
+                        <p className="mt-4 text-lg text-gray-500">
+                            See what our customers have to say about their toy shopping experience.
+                        </p>
+                    </div>
+                    <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+                        {/* Customer Testimonial Card 1 */}
+                        <div className="bg-white overflow-hidden shadow rounded-lg">
+                            <div className="p-6">
+                                <blockquote>
+                                    <div className="text-xl text-gray-900">
+                                        "My kids absolutely love the toys we bought from this website. They provide a great selection and excellent customer service."
+                                    </div>
+                                    <div className="mt-4">
+                                        <p className="text-base font-medium text-gray-700">- Emily Johnson</p>
+                                        <p className="text-sm text-gray-500">Los Angeles, CA</p>
+                                    </div>
+                                </blockquote>
+                            </div>
+                        </div>
+                        {/* Customer Testimonial Card 2 */}
+                        <div className="bg-white overflow-hidden shadow rounded-lg">
+                            <div className="p-6">
+                                <blockquote>
+                                    <div className="text-xl text-gray-900">
+                                        "This website has made toy shopping so convenient. The toys are of great quality and always arrive on time."
+                                    </div>
+                                    <div className="mt-4">
+                                        <p className="text-base font-medium text-gray-700">- Michael Rodriguez</p>
+                                        <p className="text-sm text-gray-500">Houston, TX</p>
+                                    </div>
+                                </blockquote>
+                            </div>
+                        </div>
+                        {/* Customer Testimonial Card 3 */}
+                        <div className="bg-white overflow-hidden shadow rounded-lg">
+                            <div className="p-6">
+                                <blockquote>
+                                    <div className="text-xl text-gray-900">
+                                        "I'm impressed with the range of educational toys available on this website. It's been a great resource for my child's development."
+                                    </div>
+                                    <div className="mt-4">
+                                        <p className="text-base font-medium text-gray-700">- Sarah Thompson</p>
+                                        <p className="text-sm text-gray-500">New York, NY</p>
+                                    </div>
+                                </blockquote>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </section>
+
+
+
+
+
         </div>
     );
 };

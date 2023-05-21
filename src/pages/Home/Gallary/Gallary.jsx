@@ -14,8 +14,8 @@ const Gallery = () => {
   }, []);
 
   return (
-    <div>
-      <div className='container w-1/2 mx-auto'>
+    <div className='bg-gray-100'>
+      <div className='container  lg:w-1/2 mx-auto'>
         <h1 className='text-5xl my-10 text-center font-bold text-orange-500'>Popular Products Gallery</h1>
         <hr />
         <p className='text-center text-gray-600 mt-6'>
@@ -24,7 +24,7 @@ const Gallery = () => {
         </p>
       </div>
       <hr className='my-16' />
-      <div className="flex flex-wrap justify-center gap-3">
+      <div className="flex flex-wrap justify-center gap-2">
         {gallery.map(item => (
           <div
             key={item._id}
