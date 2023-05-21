@@ -1,80 +1,82 @@
-
+import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useLoaderData } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
-const Updated = () => {
-
-  const { register, handleSubmit } = useForm();
+const UpdatedForm = () => {
+  const { register, handleSubmit, reset } = useForm();
   const loader = useLoaderData();
-  const { description, quantity, price, _id } = loader;
+  const { description, quantity, price, _id, name } = loader;
 
-  const onSubmit = (data, e) => {
-    fetch(`https://toys-server-mu.vercel.app/addToys/${_id}`, {
-      method: 'PUT',
-      headers: {
-        'content-type': 'application/json',
-      },
-      body: JSON.stringify(data),
-    })
-      .then((res) => res.json())
-      .then((result) => {
-        console.log(result);
-        // Show success toast
-        toast.success('Toy updated successfully!');
-
-        e.target.reset(); // Reset the form
-      })
-      .catch((error) => {
-        console.error(error);
-        // Show error toast
-        toast.error('Failed to update toy.');
+  const onSubmit = async (data) => {
+    try {
+      const response = await fetch(`https://toys-server-mu.vercel.app/addToys/${_id}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
       });
+
+      if (response.ok) {
+        toast.success('Toy updated successfully!');
+        reset(); // Reset the form
+      } else {
+        throw new Error('Failed to update toy.');
+      }
+    } catch (error) {
+      console.error(error);
+      toast.error('Failed to update toy.');
+    }
   };
 
-
-
   return (
-    <div className="mt-14">
+    <div className="my-14 lg:w-1/2 mx-auto">
+      <h4 className="text-2xl text-center font-bold mb-4">Update Your Product</h4>
       <div>
-        <form className="toy-form" onSubmit={handleSubmit(onSubmit)}>
+        <form className="bg-white rounded border shadow-lg p-6" onSubmit={handleSubmit(onSubmit)}>
           <div className="mb-4">
-            <label htmlFor="price" className="font-bold">Price:</label>
+            <label htmlFor="price" className="font-bold mb-2">
+              Price:
+            </label>
             <input
               type="number"
               id="price"
-              className="input-field px-4 py-2 mt-1 block w-full rounded border border-gray-300 bg-gray-100 text-gray-800"
+              className="input-field px-4 py-2 border border-gray-300 rounded w-full"
               defaultValue={price}
               {...register('price')}
             />
           </div>
           <div className="mb-4">
-            <label htmlFor="quantity" className="font-bold">Available quantity:</label>
+            <label htmlFor="quantity" className="font-bold mb-2">
+              Available quantity:
+            </label>
             <input
               type="number"
               id="quantity"
-              className="input-field px-4 py-2 mt-1 block w-full rounded border border-gray-300 bg-gray-100 text-gray-800"
+              className="input-field px-4 py-2 border border-gray-300 rounded w-full"
               defaultValue={quantity}
               {...register('quantity')}
             />
           </div>
           <div className="mb-4">
-            <label htmlFor="description" className="font-bold">Detail description:</label>
+            <label htmlFor="description" className="font-bold mb-2">
+              Detail description:
+            </label>
             <textarea
               id="description"
-              className="input-field px-4 py-2 mt-1 block w-full rounded border border-gray-300 bg-gray-100 text-gray-800"
+              className="input-field px-4 py-2 border border-gray-300 rounded w-full h-32 resize-none"
               defaultValue={description}
               {...register('description')}
             />
           </div>
-          <button className="text-primary bg-orange-600 font-bold text-2xl px-4 py-2 rounded" type="submit">Update!</button>
+          <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded" type="submit">
+            Update!
+          </button>
         </form>
       </div>
     </div>
-
   );
 };
 
-export default Updated;
-
-
+export default UpdatedForm;
