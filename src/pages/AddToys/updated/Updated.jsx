@@ -32,7 +32,8 @@ const UpdatedForm = () => {
 
   return (
     <div className="my-14 lg:w-1/2 mx-auto">
-      <h4 className="text-2xl text-center font-bold mb-4">Update Your Product</h4>
+      <h4 className="text-3xl text-center font-bold mb-4">Update Your Product</h4>
+      <h4 className="text-2xl text-center font-bold my-4">Product Name : {name} </h4>
       <div>
         <form className="bg-white rounded border shadow-lg p-6" onSubmit={handleSubmit(onSubmit)}>
           <div className="mb-4">
