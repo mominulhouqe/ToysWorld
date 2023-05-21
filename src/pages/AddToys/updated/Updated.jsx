@@ -8,7 +8,7 @@ const UpdatedForm = () => {
   const loader = useLoaderData();
   const { description, quantity, price, _id, name } = loader;
 
-  const onSubmit = async (data) => {
+  const onSubmit = async (data, e) => {
     try {
       const response = await fetch(`https://toys-server-mu.vercel.app/addToys/${_id}`, {
         method: 'PUT',
@@ -20,7 +20,7 @@ const UpdatedForm = () => {
 
       if (response.ok) {
         toast.success('Toy updated successfully!');
-        reset(); // Reset the form
+        e.target.reset(); // Reset the form
       } else {
         throw new Error('Failed to update toy.');
       }
@@ -71,9 +71,7 @@ const UpdatedForm = () => {
               {...register('description')}
             />
           </div>
-          <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded" type="submit">
-            Update!
-          </button>
+          <button className="text-primary bg-orange-600 font-bold text-2xl px-4 py-2 rounded" type="submit">Update!</button>
         </form>
       </div>
     </div>

@@ -16,7 +16,7 @@ const AddToys = () => {
     const { user } = useContext(AuthContext);
 
     const onSubmit = (data) => {
-        console.log(data);
+       
 
         fetch('https://toys-server-mu.vercel.app/addToys', {
             method: 'POST',
@@ -27,7 +27,7 @@ const AddToys = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
+             
 
                 Swal.fire(
                     'Your Toys Added Successfully!',
