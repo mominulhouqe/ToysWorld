@@ -54,8 +54,9 @@ const ToysCategory = () => {
                   {subCategory.toys.map((toy, toyIndex) => (
                     <div
                       key={toyIndex}
-                      data-aos="fade-left"
-                      data-aos-delay={toyIndex * 100}
+                      data-aos-anchor-placement="top-center"
+                      data-aos="fade-up"
+                      data-aos-duration="800"
                       className="bg-white p-4 rounded-2xl shadow"
                     >
                       <Link to={`/toys/${toy.id}`} className="card-link" >
