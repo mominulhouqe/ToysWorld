@@ -76,10 +76,10 @@ useTitle('Login')
 
     return (
         <div>
-            <div className="flex justify-center items-center min-h-screen bg-gray-100">
-                <div className="w-full max-w-sm bg-white shadow-md rounded-2xl px-16 py-16">
+            <div className="flex justify-center my-12 items-center min-h-screen ">
+                <div className="w-full max-w-sm bg-white shadow-md border rounded-2xl px-16 py-16">
                     <h2 className="text-4xl font-bold mb-6  text-center ">Login</h2>
-                    <form onSubmit={handleLogin}>
+                    <form  onSubmit={handleLogin}>
                         <div className="mb-4">
                             <label htmlFor="email" className="block text-gray-700 font-semibold mb-2">
                                 Email Address
