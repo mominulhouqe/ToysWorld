@@ -1,6 +1,6 @@
-## Project Title : ToysWorld
+## **Project Title : ToysWorld**
 
-## Description
+## **Description**
 
 - Welcome to our toy store, where learning and play come together! We specialize in a wide range of educational toys that inspire young minds to explore the fascinating worlds of math, languages, and engineering. Our carefully curated collection features toys that make learning fun and engaging, sparking curiosity and creativity in children of all ages.
 
@@ -16,7 +16,7 @@
 
 ---
 
-## I used Those technology are .....
+## **I used Those technology are .....**
 
 -  1.HTML For Website overview
 - 2.CSS For Styling
@@ -28,22 +28,22 @@
 - 9.Deploy server on vercel
 - 10.mongoDB
 
-## Features
+## **Features**
 
 ---
 - Comprehensive Toy Information:
 A robust toy management application should allow users to store and display detailed information about each toy. Include fields such as toy name, brand, category, age range, description, price, availability, and any other relevant details. This comprehensive information helps users easily identify and categorize their toys.
 - Image Gallery:
 Visuals play a crucial role in the toy industry. Incorporate an image gallery feature that enables users to upload and display images of their toys. This allows users to showcase their collection and helps potential buyers get a better understanding of the toys they are interested in.
-- ` User Authentication and Authorization`:
-<br />
-If your toy management application involves multiple users, implementing user authentication and authorization is crucial. This ensures that only authorized individuals can access and modify the toy collection. User roles and permissions can be assigned to differentiate between toy sellers, buyers, and administrators.
+-  User Authentication and Authorization:
+
+- If your toy management application involves multiple users, implementing user authentication and authorization is crucial. This ensures that only authorized individuals can access and modify the toy collection. User roles and permissions can be assigned to differentiate between toy sellers, buyers, and administrators.
 
 - Mobile Responsiveness:
 Ensure your toy management application is mobile-responsive, as users may want to access and manage their toy collection on the go. Optimizing the application's layout and design for mobile devices will provide a seamless experience across different screen sizes.
 
 
-## Demo
+## **Demo**
 
 I have Included my Website Link you can see.
 - Live site :
@@ -52,7 +52,7 @@ I have Included my Website Link you can see.
 - Server
 - https://toys-server-mu.vercel.app/addToys
 
-# Installation and Usage
+# **Installation and Usage**
 
 ---
 
@@ -62,12 +62,12 @@ if done it.then open your vscode terminal
 and write > npm install> Enter
 Then you use my project
 
-## Credits
+## **Credits**
 
 ---
 
 - Thank to Vite for helping easy for project.It's is easy and more comportabe.
 
-## License
+## **License**
 
 - Research Licensing Requirements: Identify the specific licenses or permits that may be required for your website based on its nature and the products or services you offer. This could include general business licenses, specific industry licenses, or online-specific licenses.
