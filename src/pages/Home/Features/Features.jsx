@@ -3,9 +3,9 @@ import { motion } from 'framer-motion';
 const Features = () => {
     return (
         <div>
-            <div className='bg-gradient-to-r from-pink-500 container mx-auto to-purple-500 py-16 px-8'>
+            <div className='bg-gradient-to-r from-slate-300-500 container mx-auto text-blue-50 to-purple-500 py-16 px-8'>
                 <div className='container mx-auto'>
-                    <h2 className='text-4xl text-white font-bold text-center mb-8'>Explore Our Toy Collection</h2>
+                    <h2 className='text-4xl font-bold text-orange-400 text-center mb-8'>Explore Our Toy Collection</h2>
                     <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
                         <motion.div
                             className='bg-white rounded-lg shadow-lg p-6'
