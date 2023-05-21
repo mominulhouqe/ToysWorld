@@ -7,7 +7,7 @@ const Updated = () => {
     console.log(loader);
     return (
         <div>
-          data {loader.length}
+          data {loader.name}
         
         </div>
     );
