@@ -48,25 +48,3 @@ const Gallery = () => {
 };
 
 export default Gallery;
-
-
-/* 
-
-
-https://i.ibb.co/xGMVsYB/my-img07-1.jpg
-https://i.ibb.co/By6XRpt/my-img07-2.jpg
-https://i.ibb.co/2vVCCMn/my-img07.jpg
-
-
-
-https://i.ibb.co/VLfN341/my-img14.jpg
-https://i.ibb.co/zFXZSGH/my-img15.jpg
-https://i.ibb.co/Nj1ng7G/my-img16.jpg
-https://i.ibb.co/J7955H6/my-img17.jpg
-https://i.ibb.co/ChnJ4f6/my-img18.jpg
-https://i.ibb.co/VNTgXPV/my-img19.jpg
-https://i.ibb.co/1mDzZF0/my-img20.jpg
-https://i.ibb.co/fkFM6XB/my-img21.jpg
-https://i.ibb.co/tmB39Yg/my-img22.jpg
-
-*/

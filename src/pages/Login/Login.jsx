@@ -24,9 +24,6 @@ useTitle('Login')
         const email = form.email.value;
         const password = form.password.value;
 
-
-
-
         if (!/(?=.*[a-z])/.test(password)) {
             swal ( "Oops" ,  "try to at least one lowercase!" ,  "error" )
             return;
